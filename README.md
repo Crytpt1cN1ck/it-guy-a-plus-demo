@@ -8,7 +8,7 @@ This project was built as part of coursework and is also intended to serve as a 
 ---
 
 ## Live Demo
-https://yourusername.github.io/your-repo-name/
+https://crytpt1cn1ck.github.io/it-guy-a-plus-demo/
 
 ---
 
