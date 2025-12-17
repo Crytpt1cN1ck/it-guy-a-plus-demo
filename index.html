@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT Guy: A+ Edition — Flashcards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">IT</div>
+      <div>
+        <div class="title">IT Guy: A+ Edition</div>
+        <div class="subtitle">Browser-only Flashcards</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <select id="deckSelect" aria-label="Choose deck"></select>
+      <button id="resetBtn">Start New Study Session</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats">
+      <div class="stat">
+        <div class="statLabel">Unanswered</div>
+        <div id="dueNow" class="statValue">0</div>
+      </div>
+      <div class="stat">
+        <div class="statLabel">Review</div>
+        <div id="learning" class="statValue">0</div>
+      </div>
+      <div class="stat">
+        <div class="statLabel">Mastered</div>
+        <div id="mastered" class="statValue">0</div>
+      </div>
+    </section>
+	
+	<section class="legend">
+      <div><strong>Unanswered</strong>: Not studied yet</div>
+      <div><strong>Review</strong>: Needs more practice</div>
+      <div><strong>Mastered</strong>: Confident, removed from deck</div>
+    </section>
+	
+	<div class="legendNote">Cards are presented in random order each session.</div>
+
+    <section class="cardArea">
+      <button id="prevBtn" class="navBtn" aria-label="Previous card">◀</button>
+
+      <article id="card" class="card" tabindex="0" aria-label="Flashcard (click to flip)">
+        <div class="cardInner" id="cardInner">
+          <div class="face front">
+            <div class="faceLabel">Q</div>
+            <div id="question" class="faceText"></div>
+			<ul id="choices" class="choices" aria-label="Answer choices"></ul>
+			<div class="hint">Click to flip • Spacebar to flip</div>
+          </div>
+          <div class="face back">
+            <div class="faceLabel">A</div>
+            <div id="answer" class="faceText"></div>
+            <div id="explain" class="explain"></div>
+          </div>
+        </div>
+      </article>
+
+      <button id="nextBtn" class="navBtn" aria-label="Next card">▶</button>
+    </section>
+
+    <section class="actions">
+      <button id="checkBtn" class="good" disabled>Check Answer</button>
+      <button id="reviewBtn" class="ghost" disabled>Add to Review</button>
+	  <button id="masterBtn" class="easy" disabled>Add to Mastered</button>
+    </section>
+
+    <section class="footerRow">
+      <div id="cardMeta" class="meta"></div>
+      <div class="shortcuts">Shortcuts: Space=Flip • 1=Check Answer • 2=Add to Review • 3=Add to Mastered</div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
