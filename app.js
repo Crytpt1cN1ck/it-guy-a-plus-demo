@@ -2028,6 +2028,23 @@ function init(){
     updateButtons();
   });
 
+  // B) Add to Review (allowed after checking, right or wrong)
+  reviewBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!checked) return;
+
+    const p = ensureDeckProgress(loadProgress(), deckId, deck.cards.length);
+    const idx = order[cursor];
+
+    p[deckId][idx].status = "review";
+    saveProgress(p);
+
+    nextCard();
+  });
+
+
   // C) Add to Mastered (only allowed if checked + correct)
   masterBtn.addEventListener("click", (e) => {
     e.preventDefault();
